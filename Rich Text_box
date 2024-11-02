@@ -1,0 +1,35 @@
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp1
+{
+    public partial class Form1 : Form
+    {
+        private RichTextBox richTextBoxContent; 
+
+        public Form1()
+        {
+            InitializeComponent();
+            InitializeRichTextBox(); 
+        }
+
+        private void InitializeRichTextBox()
+        {
+            richTextBoxContent = new RichTextBox();
+            richTextBoxContent.Name = "Rich_TextBox_Content";
+            richTextBoxContent.Size = new Size(300, 200); 
+            richTextBoxContent.Location = new Point(100, 10); 
+            richTextBoxContent.Font = new Font("Gabriel", 10); 
+            richTextBoxContent.Text = " RichTextBox!";
+            richTextBoxContent.BackColor = Color.LightYellow;
+
+            this.Controls.Add(richTextBoxContent);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            richTextBoxContent.AppendText("\nmy name is M.Danial. ");
+        }
+    }
+}
