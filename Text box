@@ -1,0 +1,37 @@
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp1
+{
+    public partial class Form1 : Form
+    {
+        private TextBox textBoxInput; 
+
+        public Form1()
+        {
+            InitializeComponent();
+            InitializeTextBox(); 
+        }
+
+        private void InitializeTextBox()
+        {
+
+            textBoxInput = new TextBox();
+            textBoxInput.Name = "textBoxInput";
+            textBoxInput.Size = new Size(200, 30); 
+            textBoxInput.Location = new Point(10, 50); 
+            textBoxInput.Font = new Font("Arial", 10);
+           
+
+
+            this.Controls.Add(textBoxInput);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+            textBoxInput.Text = "Enter text here";
+        }
+    }
+}
